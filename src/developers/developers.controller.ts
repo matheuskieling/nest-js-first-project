@@ -19,16 +19,16 @@ export class DevelopersController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.developersService.findOne(+id);
+    return this.developersService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateDeveloperDto: UpdateDeveloperDto) {
-    return this.developersService.update(+id, updateDeveloperDto);
+    return this.developersService.update(id, updateDeveloperDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.developersService.remove(+id);
+    return this.developersService.remove(id);
   }
 }

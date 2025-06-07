@@ -10,7 +10,7 @@ import { Developer } from './developers/entities/developer.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: [Developer],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     DevelopersModule

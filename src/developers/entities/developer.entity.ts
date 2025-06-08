@@ -1,5 +1,5 @@
 import { BeforeInsert, Column, Entity, PrimaryColumn } from 'typeorm';
-const { nanoId } = require('nanoid');
+const { nanoid } = require('nanoid');
 
 @Entity('developers')
 export class Developer {
@@ -17,6 +17,6 @@ export class Developer {
 
   @BeforeInsert()
   generateId() {
-    this.id = `dev+${nanoId()}`;
+    this.id = `dev+${nanoid()}`;
   }
 }

@@ -20,8 +20,9 @@ export class DevelopersService {
     return this.repository.find();
   }
 
-  findOne(id: string) {
-    return this.repository.findOneBy({ id })
+  async findOne(id: string) {
+    const developer = await this.repository.findOneBy({ id })
+    if (!developer) return null
   }
 
   async update(id: string, dto: UpdateDeveloperDto) {
